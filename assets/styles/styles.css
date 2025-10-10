@@ -1,4 +1,47 @@
+/*index.html styling*/
 
+/*Hero image*/
+/*Sourced originally from: https://www.w3schools.com/howto/howto_css_hero_image.asp*/
+.planetHeroImage{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url("../images/heroImagePlaceholder.jpg");
+    height: 60%; /*how much of the screen to cover*/
+
+    /*Centers the image and scales*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+/* Place text in the middle of the hero image */
+.heroImageText {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+/*Edit heroHeader fontsize*/
+#heroHeader {
+    font-size: 4rem;
+
+}
+
+#heroText{
+    font-size: 1.5em;
+}
+
+/*HeroButton*/
+
+
+/*Universal Styling*/
+
+/*Makes sure whole screen is covered*/
+body,html {
+    height:100%;
+}
 p {
     font-family: 'Jost', sans-serif;
 }
