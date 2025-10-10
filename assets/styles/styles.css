@@ -19,18 +19,22 @@
 
 /*#region heroSection*/      
 
-/*Sourced originally from: https://www.w3schools.com/howto/howto_css_hero_image.asp*/
+/*Sourced originally from:
+ https://www.w3schools.com/howto/howto_css_hero_image.asp
+ https://css-tricks.com/perfect-full-page-background-image/
+ */
 
 /*Hero image*/
 .heroSection{
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url("../images/heroImagePlaceholder.jpg");
-    height: 80%; /*how much of the screen to cover*/
-
-    /*Centers the image and scales*/
+    min-height: 80%; /*how much of the screen to c
+    /*Centers the image and scales i think*/
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+
     position: relative;
+    overflow: hidden;
 }
 
 /* Place text in the middle of the hero image */
@@ -67,17 +71,19 @@
 /*#region nasaExplore*/
 
 /*Sourced used to figure out flex container: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Aligning_items_in_a_flex_container*/
+
+/*Idk why it has a horizontal bar, NEED TO FIX*/
 .nasaExplore {
+    min-width: 100%;
     display: flex;
     justify-content: space-between;
     /*Space inbetween hero and nasaExplore*/
     /*top|right|bottom|left IF just using margin prop*/
     margin-top: 10em; 
-    width: 100%;
     height: 70%;
-
     border: 2px solid black;
 }
+
 .nasaExploreText{
     width:30%;
     padding:10% 5% 10% 5%;
@@ -132,13 +138,17 @@
 /*#region univStyling*/
 /*Universal Styling*/
 
-/*Makes sure whole screen is covered*/
+/*Makes sure whole screen is covered including margin:0, it defaults to 8x i think*/
+/*https://medium.com/@patrickdunn_15451/beware-default-html-margins-6159ae7a8b3e talks about it here*/
 body,html {
-    height:100%;
+    height: 100%;
+    margin: 0;
 }
+
 p {
     font-family: 'Jost', sans-serif;
 }
+
 h1 {
     font-family: 'Manrope', sans-serif;
 }
