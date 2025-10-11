@@ -1,0 +1,22 @@
+/*about.html*/
+
+/*#region univStyling*/
+/*Universal Styling*/
+
+body,html {
+    height: 100%;
+    margin: 0;
+    /*Makes jumping around page smoother, not actual user scrolling on site*/
+    scroll-behavior: smooth;
+}
+
+p {
+    font-family: 'Jost', sans-serif;
+}
+
+h1, h3{
+    font-family: 'Manrope', sans-serif;
+}
+
+
+/*#endregion univStyling*/

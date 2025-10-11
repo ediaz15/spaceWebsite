@@ -1,5 +1,5 @@
 function index(){
-    console.log("this should be good to go");
+    console.log("Wsg Jew");
 
 }
 

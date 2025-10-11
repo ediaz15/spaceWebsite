@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
 
     <!--Linking stylesheet-->
-    <link rel="stylesheet" type="text/css" href="/assets/styles/styles.css">
+    <link rel="stylesheet" type="text/css" href="./assets/styles/styles.css">
 
 </head>
 <body>
@@ -18,9 +18,12 @@
     <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
+        <a href="planets.html">Planets</a>
+
     </nav>
     <!--Hero Image Section-->
     <div class="heroSection">
+        <!--Hero Image courtesy of Fleuber-->>
         <div class="heroImageText">
             <h1 id="heroHeader">Explore the Unknown</h1>
             <p id="heroText">Erick Diaz COMP 324 Project</p>
@@ -32,17 +35,27 @@
         <div class="nasaExploreText">
             <h1>Traverse the Cosmos with NASA</h1>
             <p>Through the power of science, research, and human will, NASA continues to scout the universe. With new technologies being developed and an ever increasing understanding of what is around us, NASA will push through the challenges of space exploration. </p>
+            <p>dssddsdsdsddsdsds</p>
             <div class="nasaExploreButton">
-                <button id="nasaButton" type="button" >Visit Nasa</button> <!--Perhaps view how to add nasa icon for the button... visit *Nasa Logo*-->
+                <button id="nasaButton" type="button" onclick="window.location.href='https://www.nasa.gov/'">Visit Nasa</button> <!--Perhaps view how to add nasa icon for the button... visit *Nasa Logo*-->
             </div>
         </div>
         <div class="nasaExploreImage">
-            <img src="./assets/images/placeHolderXimage.png">
+            <img src="./media/images/astronautNasa.jpg">
         </div> 
     </div>
-    <!--Second Section: Planets-->
-    <div class="planets">
-        <p>we live on earth, trust</p>
+    <!--Second Section: planetsIntro-->
+    <div class="planetsIntro">
+        <h1 id="planetsIntroTitle">Our Solar System is Full of Wonders</h1>
+        <div class="planetIntroText">
+            <h4>Whether you are aiming for Mars or dreaming of a journey to Pluto, the Solar System has wonders waiting for you </h4>
+        </div>
+        <div class="planetIntroVideoContainer">
+        <!--There could be issues for browsers supporting videos...saw in mdn docs-->
+            <video id="planetIntroVideo"src="/media/video/saturnRings.mp4" type="video/mp4" height="70%" width="100%" loop autoplay>
+            </video>
+            <p>Video Courtesy of: <a href="https://pixabay.com/users/28244525/">AiVreaSaStii</a> </p>
+        </div>
     </div>
     <!--Third Section: Nasa Image of the day || Updated daily using Nasa API-->
 

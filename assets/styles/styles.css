@@ -26,7 +26,7 @@
 
 /*Hero image*/
 .heroSection{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url("../images/heroImagePlaceholder.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .9)), url("/media/images/heroStarrySky.jpg");
     min-height: 80%; /*how much of the screen to c
     /*Centers the image and scales i think*/
     background-position: center;
@@ -49,6 +49,17 @@
 
 #heroButton{
     padding: 1em;
+    border-radius: 10px;
+    border: none;
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+#heroButton:hover{
+    padding: 1em;
+    border: none;
+    background-color: #e7e7e7;
+    opacity: 1;
 }
 /*Edit heroHeader fontsize*/
 #heroHeader {
@@ -57,7 +68,7 @@
 }
 
 #heroText{
-    font-size: 1.5em;
+    font-size: 1.6em;
 }
 
 /*HeroButton*/
@@ -70,7 +81,12 @@
 ************************/
 /*#region nasaExplore*/
 
-/*Sourced used to figure out flex container: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Aligning_items_in_a_flex_container*/
+/*Sourced used to figure out flex container:
+ https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Aligning_items_in_a_flex_container
+ https://developer.mozilla.org/en-US/docs/Web/CSS/overflow
+ https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Overflow
+ */
+
 
 /*Idk why it has a horizontal bar, NEED TO FIX*/
 .nasaExplore {
@@ -80,15 +96,16 @@
     /*Space inbetween hero and nasaExplore*/
     /*top|right|bottom|left IF just using margin prop*/
     margin-top: 10em; 
-    height: 70%;
-    border: 2px solid black;
+    height: 80%;
+    border: rgba(37,37,37,37) 2px solid
 }
 
 .nasaExploreText{
     width:30%;
     padding:10% 5% 10% 5%;
-    border: 2px dotted gray;
     border-radius: 5px;
+    /*should help when resizing + avoid clips ??*/
+    overflow: auto;
 }
 
 .nasaExploreImage {  
@@ -96,13 +113,16 @@
     width: 60%;
     height: 100%;
     margin:auto;
+    overflow:-moz-hidden-unscrollable; /*Hidden w/o scroll bars*/
 }
 
 .nasaExploreImage img {
     display:block;
-    width: 100%;
+    /*https://www.w3schools.com/css/css3_object-fit.asp to make sure img doesn't go brr*/
+    object-fit: cover;
+    max-width: 100%;
+    height: auto;
     height: 100%;
-    border: 2px dotted gray;
 }
 
 .nasaExploreButton{
@@ -110,19 +130,92 @@
 }
 
 #nasaButton {
+    color: black;
     padding: 1em;
+    border-radius: 10px;
+    border: none;
+    opacity: 0.7;
+    transition: 0.3s;
+}
+/*Button hover styling: https://www.w3schools.com/css/css3_buttons.asp*/
+#nasaButton:hover {
+    padding: 1em;
+    border: none;
+    background-color: #e7e7e7;
+    opacity: 1;
 }
 /*#endregion nasaExplore*/
-
-
-
-
 
 
 /***********************
 **      Section 2     **
 ************************/
 
+/*#region planetsIntro*/
+
+
+/*Sources: 
+https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction
+https://developer.mozilla.org/en-US/docs/Web/CSS/align-items
+WHY IS FLEXBOX SO WEIRD
+*/
+.planetsIntro {
+    min-width: 100%;
+    display: flex;
+    /*Space inbetween hero and nasaExplore*/
+    /*top|right|bottom|left IF just using margin prop*/
+
+    /*Tells the flexbox to center everything and align everything inside it, basically its "children" too
+    */
+    justify-items: center;
+    align-items: center;
+    /*Tells flexbox how items should be aligned*/
+    flex-direction: column;
+    
+    border: rgba(37,37,37,37) 2px solid;
+
+    margin-top: 10em; 
+    height: 80%;
+}
+
+#planetsIntroTitle{
+    display: block;
+    width: 100%;
+    height: 10%;
+    text-align: center; 
+    padding-top: 5%;
+    margin: 0 auto;
+}
+
+.planetIntroText{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+/*for the video element: https://www.w3schools.com/tags/tag_video.asp*/
+
+.planetIntroVideoContainer{
+    margin: auto;
+    width: 100%;
+}
+
+#planetIntroVideo{
+    object-fit: cover;
+    width: 100%;
+    margin: auto;
+    padding: auto;
+}
+
+.planetIntroVideoContainer p{
+    margin: auto;
+    padding-top: 1%;
+    text-align: center;
+}
+
+/*#endregion planetsIntro*/
 
 
 
@@ -143,13 +236,18 @@
 body,html {
     height: 100%;
     margin: 0;
+    /*Makes jumping around page smoother, not actual user scrolling on site*/
+    scroll-behavior: smooth;
 }
 
 p {
     font-family: 'Jost', sans-serif;
+
 }
 
-h1 {
+h1, h4 {
     font-family: 'Manrope', sans-serif;
 }
+
+
 /*#endregion univStyling*/
