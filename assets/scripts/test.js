@@ -20,6 +20,21 @@ define camera
 render model
 
 */
+
+
+/*
+to do:
+
+NEED TO ABSTRACT the steps
+Import other solar system models
+use an array to store names of planets to change models [iterate and render]
+mess with the camera settings to ensure it functions like the eye
+create an external div container THAT will center the planets in the middle of page
+
+*/
+
+
+/*Earth, */
 //Create a Three.JS Scene
 const scene = new THREE.Scene();
 //create a new camera with positions and angles
@@ -36,7 +51,9 @@ let object;
 let controls;
 
 //Set which object to render
-let objToRender = 'earth';
+
+const solarSystem = ["mercury", "venus", "earth", "mars", "jupiter", "saturn", "uranus", "neptune", "pluto"]
+;let objToRender = solarSystem[2];
 
 //Instantiate a loader for the .gltf file
 const loader = new GLTFLoader();
@@ -67,7 +84,7 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.getElementById("container3D").appendChild(renderer.domElement);
 
 //Set how far the camera will be from the 3D model
-camera.position.z = objToRender === "earth" ? 25 : 500;
+camera.position.z = objToRender === objToRender ? 25 : 500;
 
 //Add lights to the scene, so we can actually see the 3D model
 const topLight = new THREE.DirectionalLight(0xffffff, 1); // (color, intensity)
@@ -75,13 +92,13 @@ topLight.position.set(500, 500, 500) //top-left-ish
 topLight.castShadow = true;
 scene.add(topLight);
 
-const ambientLight = new THREE.AmbientLight(0x333333, objToRender === "earth" ? 5 : 1);
+const ambientLight = new THREE.AmbientLight(0x333333, objToRender ? 5 : 1);
 scene.add(ambientLight);
 
 //This adds controls to the camera, so we can rotate / zoom it with the mouse
-if (objToRender === "earth") {
-  controls = new OrbitControls(camera, renderer.domElement);
-}
+
+controls = new OrbitControls(camera, renderer.domElement);
+
 
 //Render the scene
 function animate() {
@@ -89,10 +106,10 @@ function animate() {
   //Here we could add some code to update the scene, adding some automatic movement
 
   //Make the eye move
-  if (object && objToRender === "earth") {
+  if (object && objToRender === objToRender) {
     //I've played with the constants here until it looked good 
-    object.rotation.y = -3 + mouseX / window.innerWidth * 3;
-    object.rotation.x = -1.2 + mouseY * 2.5 / window.innerHeight;
+    object.rotation.y = -2 + mouseX / window.innerWidth * 3;
+    object.rotation.x = -1 + mouseY * 2.5 / window.innerHeight;
   }
   renderer.render(scene, camera);
 }
@@ -104,11 +121,7 @@ window.addEventListener("resize", function () {
   renderer.setSize(window.innerWidth, window.innerHeight);
 });
 
-//add mouse position listener, so we can make the eye move
-document.onmousemove = (e) => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-}
+
 
 //Start the 3D rendering
 animate();
