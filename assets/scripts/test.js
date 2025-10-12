@@ -55,14 +55,23 @@ let controls;
 //Set which object to render
 
 const solarSystem = ["mercury", "venus", "earth", "mars", "jupiter", "saturn", "uranus", "neptune", "pluto"];
-let objToRender = solarSystem[3];
+
+
+//Need to ensure that it loops back around [0,8] 
+let solarSystemIndex = 0;
+let objToRender = solarSystem[solarSystemIndex];
 
 //Buttons to help switch the 3d models
 //need a back button for all
 //Since the objects have indexes, we can build off this to use mod % len of arr to loop forward
 //the issue is going backwards -> do i subtract 1 from the index? issue is going to index =1 rather than looping
 
-//
+// After getting the planets to only spawn on left at a given size
+/*
+  - Need to change the sizes up [still not to scale but make it seem like it]
+  - use switch case stateement for each of the planets OR the index we are in
+  - update planet size based on the planet
+*/
 
 //Instantiate a loader for the .gltf file
 const loader = new GLTFLoader();
@@ -87,21 +96,76 @@ loader.load(
 
 //Instantiate a new renderer and set its size
 const renderer = new THREE.WebGLRenderer({ alpha: true }); //Alpha: true allows for the transparent background
+
+
+//this seemed to have made the planets BASED on container size rather than the window size...
 renderer.setSize(window.innerWidth, window.innerHeight);
 
 //Add the renderer to the DOM
 document.getElementById("container3D").appendChild(renderer.domElement);
+
+
+//OK MUST ensure that the sizes are varying using switch statements BASED on the value
+
+//This will be updated based on the value [inc makes it smaller]
+var planetSize;
+
+switch(objToRender){
+    case "mercury":
+      planetSize = 500;
+      console.log(objToRender);
+      break;
+    case "venus":
+      planetSize = 400;
+      console.log(objToRender);
+      break;
+    case "earth":
+      planetSize = 300;
+      console.log(objToRender);
+      break;
+    case "mars":
+      planetSize = 300;
+      console.log(objToRender);
+      break;
+    case "jupiter":
+      planetSize = 200;
+      console.log(objToRender);
+      break;
+    case "saturn":
+      planetSize = 250;
+      console.log(objToRender);
+      break;
+    case "uranus":
+      planetSize = 250;
+      console.log(objToRender);
+      break;
+    case "neptune":
+      planetSize = 200;
+      console.log(objToRender);
+      break;
+    case "pluto":
+      planetSize = 450;
+      console.log(objToRender);
+      break;
+  }
+
+
+
 
 //Set how far the camera will be from the 3D model
 //adjust the value in the terniary operator       THIS = 200
 
 //OK MUST ensure that the sizes are varying using switch statements BASED on the value
 
-var planetSize = 200;
-camera.position.z = objToRender === objToRender ? planetSize : 500;
+
+//This ^^ will be updated based on the value
+
+camera.position.z = planetSize;
 
 //Add lights to the scene, so we can actually see the 3D model
-const topLight = new THREE.DirectionalLight(0xffffff, 1); // (color, intensity)
+var color= 0xffffff;
+var intensity = .5
+const topLight = new THREE.DirectionalLight(color, intensity); // (color, intensity)
 topLight.position.set(500, 500, 500) //top-left-ish
 topLight.castShadow = true;
 scene.add(topLight);
@@ -120,11 +184,9 @@ function animate() {
   //Here we could add some code to update the scene, adding some automatic movement
 
   //Make the eye move
-  if (object && objToRender === objToRender) {
-    //I've played with the constants here until it looked good 
-    object.rotation.y = -2 + mouseX / window.innerWidth * 3;
-    object.rotation.x = -1 + mouseY * 2.5 / window.innerHeight;
-  }
+  //I've played with the constants here until it looked good 
+  object.rotation.y = -5 + mouseX / window.innerWidth * 3;
+  object.rotation.x = -1 + mouseY * 2.5 / window.innerHeight;
   renderer.render(scene, camera);
 }
 
