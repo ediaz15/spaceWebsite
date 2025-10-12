@@ -26,9 +26,11 @@ render model
 to do:
 
 NEED TO ABSTRACT the steps
-Import other solar system models
-use an array to store names of planets to change models [iterate and render]
-mess with the camera settings to ensure it functions like the eye
+//Import other solar system models
+//use an array to store names of planets to change models [iterate and render]
+//mess with the camera settings to ensure it functions like the eye
+    Need to edit test.js in the way that the zoom is, atm its super zoomed in to the model, need to make it be far while capturing relative planet size
+
 create an external div container THAT will center the planets in the middle of page
 
 */
@@ -52,8 +54,15 @@ let controls;
 
 //Set which object to render
 
-const solarSystem = ["mercury", "venus", "earth", "mars", "jupiter", "saturn", "uranus", "neptune", "pluto"]
-;let objToRender = solarSystem[2];
+const solarSystem = ["mercury", "venus", "earth", "mars", "jupiter", "saturn", "uranus", "neptune", "pluto"];
+let objToRender = solarSystem[3];
+
+//Buttons to help switch the 3d models
+//need a back button for all
+//Since the objects have indexes, we can build off this to use mod % len of arr to loop forward
+//the issue is going backwards -> do i subtract 1 from the index? issue is going to index =1 rather than looping
+
+//
 
 //Instantiate a loader for the .gltf file
 const loader = new GLTFLoader();
@@ -84,7 +93,12 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.getElementById("container3D").appendChild(renderer.domElement);
 
 //Set how far the camera will be from the 3D model
-camera.position.z = objToRender === objToRender ? 25 : 500;
+//adjust the value in the terniary operator       THIS = 200
+
+//OK MUST ensure that the sizes are varying using switch statements BASED on the value
+
+var planetSize = 200;
+camera.position.z = objToRender === objToRender ? planetSize : 500;
 
 //Add lights to the scene, so we can actually see the 3D model
 const topLight = new THREE.DirectionalLight(0xffffff, 1); // (color, intensity)
