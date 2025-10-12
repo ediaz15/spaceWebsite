@@ -56,7 +56,6 @@ let controls;
 
 const solarSystem = ["mercury", "venus", "earth", "mars", "jupiter", "saturn", "uranus", "neptune", "pluto"];
 
-
 //Need to ensure that it loops back around [0,8] 
 let solarSystemIndex = 0;
 let objToRender = solarSystem[solarSystemIndex];
