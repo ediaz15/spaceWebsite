@@ -13,17 +13,47 @@
     <style>
         body {
             margin:0;
+            height: 100%;
+        }
+        .planetDataSection{
+            margin-top: 10%;
+            display: inline-block;
+        }
+        .planetDataSection p {
+            display: inline;
+            justify-content: space-between;
+            padding: 10%;
+        }
+        .planetText{
+            width:30%;
+            padding:10% 5% 10% 5%;
+            border-radius: 5px;
+            /*should help when resizing + avoid clips ??*/
+            overflow: auto;
         }
         .planetContainer{
-            justify-content: center;
-            height: 70%;
-            width: 30%;
-            border: 2px solid black;
+            min-width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /*Space inbetween hero and nasaExplore*/
+            height: 80%;
+            border: rgba(37,37,37,37) 2px solid
         }
+        .modelContainer{
+            vertical-align: middle;
+            width: 60%;
+            height: 100%;
+            margin:auto;
+            overflow:-moz-hidden-unscrollable; /*Hidden w/o scroll bars*/
+        }
+        
         #container3D{
             justify-self: center;
-            border: 2px dotted black; 
+            border: 2px dotted black;
+            border-radius: 100%; 
         }
+
     </style>
 
 </head>
@@ -34,12 +64,22 @@
         <a href="about.html">About</a>
         <a href="planets.html">Planets</a>
     </nav>
-    
-    <h1>Testing....</h1>
-        <div class="planetContainer">
-
+    <div class="planetContainer">
+    <div class="planetText">
+        <div class="planetTopSection">
+            <h1>Testing....</h1>
+            <p>ERMMMMMMM</p>
+        </div>
+        <div class="planetDataSection">
+            <p>e = mc^2</p>
+            <p>More data</p>
+            <p>Even more data</p>
+        </div>
+    </div>
+        <div class="modelContainer">
           <div id="container3D"></div>            
         </div>
+    </div>
 
     <!--Linking JS scripts-->
 <script type="module" src="/assets/scripts/test.js"></script>
