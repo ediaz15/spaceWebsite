@@ -121,7 +121,6 @@
     /*https://www.w3schools.com/css/css3_object-fit.asp to make sure img doesn't go brr*/
     object-fit: cover;
     max-width: 100%;
-    height: auto;
     height: 100%;
 }
 

@@ -46,6 +46,7 @@
             height: 100%;
             margin:auto;
             overflow:-moz-hidden-unscrollable; /*Hidden w/o scroll bars*/
+            border: 2px solid black
         }
         
         #container3D{
@@ -53,7 +54,19 @@
             border: 2px dotted black;
             border-radius: 100%; 
         }
-
+        .buttonsContainer{
+            width:100%;
+            text-align: center;
+            justify-content: center;
+        }
+        #prev {
+            margin-right: 40%;
+            border: 2px solid blue;
+        }
+        #next {
+            margin-left: 40%;
+            border:2px solid red;
+        }
     </style>
 
 </head>
@@ -76,8 +89,11 @@
             <p>Even more data</p>
         </div>
     </div>
-        <div class="modelContainer">
-          <div id="container3D"></div>            
+    <div class="modelContainer">
+        <div id="container3D"></div>           
+        <div class="buttonsContainer">
+            <button id="prev" onclick="console.log('sigma')">sigma</button> 
+            <button id="next" onclick="console.log('erm')">erm</button> 
         </div>
     </div>
 
