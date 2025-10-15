@@ -17,7 +17,6 @@ Set up scene: load stuff
 Set up object
 define camera
 render model
-
 */
 
 /*
@@ -56,7 +55,7 @@ function main(){
   const solarSystem = ["mercury", "venus", "earth", "mars", "jupiter", "saturn", "uranus", "neptune", "pluto"];
 
   //Need to ensure that it loops back around [0,8] 
-  let solarSystemIndex = 0;
+  let solarSystemIndex = 2;
 
   function renderObj(solarSystemIndex){
     solarSystemIndex = Math.abs(solarSystemIndex % solarSystem.length);
