@@ -4,7 +4,7 @@
 
 //loadTextButton
 const loadButton = document.getElementById("loadTextButton");
-
+const planetName = document.getElementById("planetName");
 
 
 //function to load text data from json file
@@ -15,17 +15,19 @@ const loadPlanetData = file => {
     planetData.then(response => response.json())
     .then(data => {
         //now we handle the data -> create elements -> add them to text nodes -> render to dom
-        const planetTitle= data.planets[0].name; //this should access the array of planets where we need to specify which ones using indexes!
+        const planetTitle= data.planets[2].name; //this should access the array of planets where we need to specify which ones using indexes!
         const planetDataContainer = document.createElement("h1");
         const planetDataText = document.createTextNode(planetTitle);
         //we add the text to the container
         planetDataContainer.appendChild(planetDataText);
         //send it to the dom body
-        document.body.appendChild(planetDataContainer);
+        planetName.textContent = planetTitle;
+        //based on this: https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent
+        //we can replace the text content of the existing container
         //log to console for testing
         console.log(data);
     })
 };
 
-loadButton.addEventListener( 'click', () => (loadPlanetData("/docs/json/planetInfo.json")) );
+loadButton.addEventListener('click', () => (loadPlanetData("/docs/json/planetInfo.json")) );
 
