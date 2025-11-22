@@ -23,7 +23,10 @@
  https://www.w3schools.com/howto/howto_css_hero_image.asp
  https://css-tricks.com/perfect-full-page-background-image/
  */
-
+header {
+    height: 80vh;
+    width: auto;
+}
 /*Hero image*/
 .heroSection{
     background-image: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .9)), url("/media/images/heroStarrySky.jpg");
@@ -55,7 +58,7 @@
     transition: 0.3s;
 }
 
-#heroButton:hover{
+#heroButton:hover {
     padding: 1em;
     border: none;
     background-color: #e7e7e7;
@@ -66,7 +69,6 @@
     font-size: 4rem;
 
 }
-
 #heroText{
     font-size: 1.6em;
 }
@@ -90,14 +92,14 @@
 
 /*Idk why it has a horizontal bar, NEED TO FIX*/
 .nasaExplore {
-    min-width: 100%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     /*Space inbetween hero and nasaExplore*/
     /*top|right|bottom|left IF just using margin prop*/
     margin-top: 10em; 
     height: 80%;
-    border: rgba(37,37,37,37) 2px solid
+    border: rgba(37,37,37,.37) 2px solid
 }
 
 .nasaExploreText{
@@ -113,7 +115,7 @@
     width: 60%;
     height: 100%;
     margin:auto;
-    overflow:-moz-hidden-unscrollable; /*Hidden w/o scroll bars*/
+    overflow: hidden; /*Hidden w/o scroll bars*/
 }
 
 .nasaExploreImage img {
@@ -158,20 +160,20 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction
 https://developer.mozilla.org/en-US/docs/Web/CSS/align-items
 WHY IS FLEXBOX SO WEIRD
 */
+
+
 .planetsIntro {
-    min-width: 100%;
     display: flex;
     /*Space inbetween hero and nasaExplore*/
     /*top|right|bottom|left IF just using margin prop*/
 
     /*Tells the flexbox to center everything and align everything inside it, basically its "children" too
     */
-    justify-items: center;
     align-items: center;
     /*Tells flexbox how items should be aligned*/
     flex-direction: column;
     
-    border: rgba(37,37,37,37) 2px solid;
+    border: rgba(37,37,37,.37) 2px solid;
 
     margin-top: 10em; 
     height: 80%;

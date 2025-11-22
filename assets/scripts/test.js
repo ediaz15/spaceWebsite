@@ -31,6 +31,9 @@ NEED TO ABSTRACT the steps
 create an external div container THAT will center the planets in the middle of page
 - Created buttons to change index based on order of prev or next
 - idk if we need to fetch the model from dom and update it...
+
+//Accessibility:
+add keyboard controls for prev and next buttons -> so like left and right make them switch!
 */
 
 function main(){
@@ -55,7 +58,7 @@ function main(){
   const solarSystem = ["mercury", "venus", "earth", "mars", "jupiter", "saturn", "uranus", "neptune", "pluto"];
 
   //Need to ensure that it loops back around [0,8] 
-  let solarSystemIndex = 2;
+  let solarSystemIndex = 8;
 
   function renderObj(solarSystemIndex){
     solarSystemIndex = Math.abs(solarSystemIndex % solarSystem.length);
@@ -208,7 +211,6 @@ function main(){
     requestAnimationFrame(animate);
     //Here we could add some code to update the scene, adding some automatic movement
 
-    //Make the eye move
     //I've played with the constants here until it looked good 
     object.rotation.y = -5 + mouseX / window.innerWidth * 3;
     object.rotation.x = -1 + mouseY * 2.5 / window.innerHeight;
