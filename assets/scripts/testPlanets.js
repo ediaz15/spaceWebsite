@@ -22,7 +22,8 @@ controls: https://threejs.org/docs/#OrbitControls
 
 */
 let object;
-
+//This will be updated based on the value [inc makes it smaller]
+let planetSize;
 const solarSystem = ["mercury", "venus", "earth", "mars", "jupiter", "saturn", "uranus", "neptune", "pluto"];
 
 //Need to ensure that it loops back around [0,8] 
@@ -97,7 +98,9 @@ function createPlanetRenderer(){
 function addLighting(scene){
     //also taken from the planet.js file
     //Add lights to the scene, so we can actually see the 3D model
-    const topLight = new THREE.DirectionalLight(0xffffff, 1); // (color, intensity)
+    var color= 0xffffff;
+    var intensity = .5
+    const topLight = new THREE.DirectionalLight(color, intensity); // (color, intensity)
     topLight.position.set(500, 500, 500) //top-left-ish
     topLight.castShadow = true;
     scene.add(topLight);
@@ -123,7 +126,7 @@ so perhaps:
 function loadPlanetModel(planetName, scene){
     //Instantiate a loader for the .gltf file
 
-    try{
+    try {
         const loader = new GLTFLoader();
         //check if the object is already there
         if(object){
@@ -142,6 +145,40 @@ function loadPlanetModel(planetName, scene){
     } catch(e){
         console.log(e);
     }
+}
+
+
+function getPlanetSize(planetName){
+    switch(planetName){
+      case "mercury":
+        planetSize = 500;
+        break;
+      case "venus":
+        planetSize = 400;
+        break;
+      case "earth":
+        planetSize = 300;
+        break;
+      case "mars":
+        planetSize = 300;
+        break;
+      case "jupiter":
+        planetSize = 200;        
+        break;
+      case "saturn":
+        planetSize = 250;
+        break;
+      case "uranus":
+        planetSize = 250;
+        break;
+      case "neptune":
+        planetSize = 200;
+        break;
+      case "pluto":
+        planetSize = 450;
+        break;
+    }
+    return planetSize;
 }
 
 
@@ -174,11 +211,17 @@ function animate() {
 //setting up stuff
 const scene = createPlanetScene();
 const camera = createPlanetCamera();
+//Set how far the camera will be from the 3D model
+//LOOKS LIKE I WAS MISSING THIS PORTION HERE!!!!!
+planetSize = getPlanetSize(planetName);
+camera.position.z = planetSize;
+
 const renderer = createPlanetRenderer();
 addLighting(scene);
 //adapted from planet.js again
 //This adds controls to the camera, so we can rotate / zoom it with the mouse
 const controls = new OrbitControls(camera, renderer.domElement);
+
 //Add a listener to the window, so we can resize the window and the camera
 window.addEventListener("resize", function () {
   camera.aspect = window.innerWidth / window.innerHeight;
@@ -187,11 +230,13 @@ window.addEventListener("resize", function () {
 });
 
 animate();
-
+renderPlanet(planetName);
 //HOPEFULLY AFTER THE DEBUGGING THIS WORKS
 function renderPlanet(planetName){
     //does the rest of the cool model stuff
     loadPlanetModel(planetName, scene);
+    planetSize = getPlanetSize(planetName);
+    camera.position.z = planetSize;
 }
 
 
