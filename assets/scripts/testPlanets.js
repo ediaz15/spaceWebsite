@@ -55,6 +55,22 @@ nextButton.addEventListener('click', () => {
     console.log("next works");
 });
 
+//adding the event listener for left and right arrows
+//will be used to switch planets using the keyboard
+//https://plainenglish.io/blog/how-to-detect-arrow-key-presses-in-javascript-2c38192de0e8
+window.addEventListener('keydown', (event) => {
+    if(event.key === "ArrowLeft"){
+        solarSystemIndex--;
+        planetName = choosePlanetName(solarSystemIndex);
+        renderPlanet(planetName);
+    }
+    else if(event.key === "ArrowRight"){
+        solarSystemIndex++;
+        planetName = choosePlanetName(solarSystemIndex);
+        renderPlanet(planetName);
+    }
+});
+
 //creating the scene
 function createPlanetScene(){
     const scene = new THREE.Scene();
@@ -85,7 +101,6 @@ function addLighting(scene){
     topLight.position.set(500, 500, 500) //top-left-ish
     topLight.castShadow = true;
     scene.add(topLight);
-
     const ambientLight = new THREE.AmbientLight(0x333333, 1);
     scene.add(ambientLight);
 }
@@ -104,23 +119,29 @@ so perhaps:
 - if so, remove it
 - load new model
 - add to scene!
-*/
+    */
 function loadPlanetModel(planetName, scene){
     //Instantiate a loader for the .gltf file
-    const loader = new GLTFLoader();
-    //check if the object is already there
-    if(object){
+
+    try{
+        const loader = new GLTFLoader();
+        //check if the object is already there
+        if(object){
         scene.remove(object);
+        object = null;
+        }
+        loader.load(
+        'media/solarSystemModels/' + planetName + '.glb',
+            function (gltf) {
+                //If the file is loaded, add it to the scene
+                object = gltf.scene;
+                scene.add(object);
+            },
+        );
+        console.log("Current planet: " + planetName); 
+    } catch(e){
+        console.log(e);
     }
-    loader.load(
-    'media/solarSystemModels/' + planetName + '.glb',
-        function (gltf) {
-            //If the file is loaded, add it to the scene
-            object = gltf.scene;
-            scene.add(object);
-        },
-    );
-    console.log("Current planet: " + planetName); 
 }
 
 
@@ -158,6 +179,13 @@ addLighting(scene);
 //adapted from planet.js again
 //This adds controls to the camera, so we can rotate / zoom it with the mouse
 const controls = new OrbitControls(camera, renderer.domElement);
+//Add a listener to the window, so we can resize the window and the camera
+window.addEventListener("resize", function () {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+});
+
 animate();
 
 //HOPEFULLY AFTER THE DEBUGGING THIS WORKS
@@ -165,12 +193,5 @@ function renderPlanet(planetName){
     //does the rest of the cool model stuff
     loadPlanetModel(planetName, scene);
 }
-
-//Add a listener to the window, so we can resize the window and the camera
-window.addEventListener("resize", function () {
-  camera.aspect = window.innerWidth / window.innerHeight;
-  camera.updateProjectionMatrix();
-  renderer.setSize(window.innerWidth, window.innerHeight);
-});
 
 
