@@ -123,7 +123,5 @@ window.addEventListener("resize", function () {
   renderer.setSize(window.innerWidth, window.innerHeight);
 });
 
-
-
 //Start the 3D rendering
 animate();

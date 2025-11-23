@@ -2,8 +2,7 @@
 //For a prototype, load planet data from file from a button click
 //using app-fetch-basic2.js from gitlab as reference
 
-//loadTextButton
-const loadButton = document.getElementById("loadTextButton");
+
 const planetName = document.getElementById("planetName");
 
 
@@ -15,19 +14,20 @@ const loadPlanetData = file => {
     planetData.then(response => response.json())
     .then(data => {
         //now we handle the data -> create elements -> add them to text nodes -> render to dom
-        const planetTitle= data.planets[2].name; //this should access the array of planets where we need to specify which ones using indexes!
+        const planetTitle = data.planets[1].name; //this should access the array of planets where we need to specify which ones using indexes!
+       
         const planetDataContainer = document.createElement("h1");
         const planetDataText = document.createTextNode(planetTitle);
         //we add the text to the container
         planetDataContainer.appendChild(planetDataText);
         //send it to the dom body
+        //we can replace the text content of the existing container
         planetName.textContent = planetTitle;
         //based on this: https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent
-        //we can replace the text content of the existing container
         //log to console for testing
-        console.log(data);
+        console.log("Current accessed planet: " + planetTitle);
     })
 };
 
-loadButton.addEventListener('click', () => (loadPlanetData("/docs/json/planetInfo.json")) );
+loadPlanetData("/docs/json/planetInfo.json");
 
