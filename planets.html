@@ -1,35 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <title>TEST</title>
-    
     <!--Importing the google fonts!-->    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
-    <style>
-        body{
-            margin:0;
-        }
-    </style>
-    <!--All the planet related information in the json file was taken from: https://science.nasa.gov/solar-system/planets/  https://science.nasa.gov/resource/solar-system-sizes/!-->
+        <!--All the planet related information in the json file was taken from: https://science.nasa.gov/solar-system/planets/ !-->
+    <link rel="stylesheet" type="text/css" href="assets/styles/planets.css">
 </head>
 <body>
     <!--NavBar for navigation!-->
+    <!--Need to make it to where the model fades up -> text should fade out when switch is triggered then fade in when text is to be rendered-->
+    <!--Must time these well-->
+    <!--Show which planet is active, maybe some bar that showcases something like-->
+    <!-- - - - - - - - -  where each "-" is a non highlighted bar, and depending on which planet you are on, shows how far you into the models-->
     <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="planets.html">Planets</a>
     </nav>
-    
-    <h1>this is Planets</h1>
-          <div id="container3D"></div>
-
+    <div class="planetContainer">
+    <div class="planetText">
+        <div class="planetTopSection">
+            <h1 id="planetName">*insert planet name here*</h1>
+            <p>Description: [should render description based on the planet we are working on]</p>
+        </div>
+        <div class="planetDataContainer">
+            <p>Radius:</p>
+            <p>Distance From Sun:</p>
+            <p>Formation:</p>
+            <p>Structure:</p>
+            <p>Surface:</p>
+        </div>
+    </div>
+    <div class="modelContainer">
+        <div id="container3D"></div>           
+        <div class="buttonsContainer">
+            <button id="prev">prev</button> 
+            <button id="next">next</button> 
+        </div>
+    </div>
     <!--Linking JS scripts-->
-<script type="module" src="/assets/scripts/test.js"></script>
+<script type="module" src="/assets/scripts/testPlanets.js"></script>
+<script type="module" src="/assets/scripts/loadTextTest.js"></script>
 
 </body>
 </html>

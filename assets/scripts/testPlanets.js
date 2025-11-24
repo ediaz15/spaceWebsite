@@ -27,7 +27,7 @@ let planetSize;
 const solarSystem = ["mercury", "venus", "earth", "mars", "jupiter", "saturn", "uranus", "neptune", "pluto"];
 
 //Need to ensure that it loops back around [0,8] 
-let solarSystemIndex = 1;
+let solarSystemIndex = 0;
 
 function choosePlanetName(solarSystemIndex){
     solarSystemIndex = Math.abs(solarSystemIndex % solarSystem.length);
@@ -93,13 +93,13 @@ function createPlanetRenderer(){
     //Add the renderer to the DOM
     document.getElementById("container3D").appendChild(renderer.domElement);
     return renderer;
-    }
+}
 
 function addLighting(scene){
     //also taken from the planet.js file
     //Add lights to the scene, so we can actually see the 3D model
     var color= 0xffffff;
-    var intensity = .5
+    var intensity = 1;
     const topLight = new THREE.DirectionalLight(color, intensity); // (color, intensity)
     topLight.position.set(500, 500, 500) //top-left-ish
     topLight.castShadow = true;
@@ -107,9 +107,6 @@ function addLighting(scene){
     const ambientLight = new THREE.AmbientLight(0x333333, 1);
     scene.add(ambientLight);
 }
-
-
-
 
 /*
 "you'll want to call scene.remove() with 
@@ -123,21 +120,23 @@ so perhaps:
 - load new model
 - add to scene!
     */
+    //Already tried getObjectByName but it returns undefined -> no object was found
+
 function loadPlanetModel(planetName, scene){
     //Instantiate a loader for the .gltf file
-
     try {
         const loader = new GLTFLoader();
         //check if the object is already there
         if(object){
-        scene.remove(object);
-        object = null;
+            scene.remove(object);
+            object = null;
         }
         loader.load(
         'media/solarSystemModels/' + planetName + '.glb',
             function (gltf) {
                 //If the file is loaded, add it to the scene
                 object = gltf.scene;
+                //retrying the getObjectByName here, but after looking at docs, must assign a name to the scene
                 scene.add(object);
             },
         );
@@ -224,9 +223,9 @@ const controls = new OrbitControls(camera, renderer.domElement);
 
 //Add a listener to the window, so we can resize the window and the camera
 window.addEventListener("resize", function () {
-  camera.aspect = window.innerWidth / window.innerHeight;
-  camera.updateProjectionMatrix();
-  renderer.setSize(window.innerWidth, window.innerHeight);
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
 });
 
 animate();
@@ -237,6 +236,7 @@ function renderPlanet(planetName){
     loadPlanetModel(planetName, scene);
     planetSize = getPlanetSize(planetName);
     camera.position.z = planetSize;
+
 }
 
 

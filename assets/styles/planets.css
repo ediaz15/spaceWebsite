@@ -1,23 +1,70 @@
-/*planets.html*/
-
-/*#region univStyling*/
-/*Universal Styling*/
-
-
-body,html {
+body {
+    margin:0;
     height: 100%;
-    margin: 0;
-    /*Makes jumping around page smoother, not actual user scrolling on site*/
-    scroll-behavior: smooth;
+}
+.planetDataContainer{
+    border: 2px solid green;
+    margin-top: 10%;
+    display: inline-block;
+}
+.planetDataContainer p {
+    display: inline;
+    justify-content: space-between;
+    padding: 10%;
+}
+.planetText{
+    width:30%;
+    padding:10% 5% 10% 5%;
+    border-radius: 5px;
+    /*should help when resizing + avoid clips ??*/
+    overflow: auto;
+}
+.planetContainer{
+    min-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*Space inbetween hero and nasaExplore*/
+    height: 80%;
+    border: rgba(37,37,37,37) 2px solid
 }
 
-p {
-    font-family: 'Jost', sans-serif;
+/*the use of position relative and absolute LETS me overlap items
+since the model was already placed where i wanted, i used absolute to overlap the buttons
+https://www.geeksforgeeks.org/css/difference-between-relative-and-absolute-position-in-css/
+This also lets the model expand without covering buttons!
+*/
+.modelContainer{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 100%;
+    overflow:hidden; /*Hidden just overall..*/
+    border: 2px solid black
 }
 
-h1, h3{
-    font-family: 'Manrope', sans-serif;
+#container3D{
+    border: 2px dotted black;
+    border-radius: 100%;
 }
 
-
-/*#endregion univStyling*/
+/*https://developer.mozilla.org/en-US/docs/Web/CSS/gap*/
+/*align-self is X justify-content is y i think*/
+.buttonsContainer{
+    position: absolute;
+    display: flex;
+    width:100%;
+    align-items: center; /*align-self is also good but text-align worked out*/
+    justify-content: center;
+    /*translate(x,y) i think*/
+    transform: translate("-50%", "50%");
+    gap: 85%; /*YOOOO THIS IS LIFE CHANGING OMG*/
+}
+#prev {
+    border: 2px solid blue;
+}
+#next {
+    border:2px solid red;
+}
