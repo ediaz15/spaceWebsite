@@ -4,10 +4,9 @@
 
 //feels slow BUT it works -> might use the reduce method you talked about PROF!!!
 //I think this may be because of the way im accessing the json data
-const currentPlanetIndex = 4;
 
 //function to load text data from json file
-const loadPlanetData = file => {
+const loadPlanetData = (file, currentPlanetIndex) => {
     //fetch file and return a promise
     const planetData = fetch(file);
     //have the data turn into json then log it
@@ -31,5 +30,4 @@ const loadPlanetData = file => {
     })
 };
 
-loadPlanetData("/docs/json/planetInfo.json");
-
+export { loadPlanetData };

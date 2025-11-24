@@ -9,6 +9,7 @@ import { OrbitControls } from "https://cdn.skypack.dev/three@0.129.0/examples/js
 // To allow for importing the .gltf file
 import { GLTFLoader } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/loaders/GLTFLoader.js";
 
+import { loadPlanetData } from "./loadTextTest.js";
 
 /*
 Creating a Scene: https://threejs.org/manual/#en/creating-a-scene
@@ -35,14 +36,17 @@ function choosePlanetName(solarSystemIndex){
     return obj;
 }
 var planetName = choosePlanetName(solarSystemIndex);
-
+const url = "/docs/json/planetInfo.json";
 //handling button clicks for prev and next buttons
 const prevButton = document.getElementById("prev");
 const nextButton = document.getElementById("next");
 
+loadPlanetData(url, solarSystemIndex);
+
 prevButton.addEventListener('click' , () => {
     solarSystemIndex--;
     planetName = choosePlanetName(solarSystemIndex);
+    loadPlanetData(url, solarSystemIndex);
     renderPlanet(planetName);
     console.log(solarSystemIndex);
     console.log("prev works");
@@ -51,6 +55,7 @@ prevButton.addEventListener('click' , () => {
 nextButton.addEventListener('click', () => {
     solarSystemIndex++;
     planetName = choosePlanetName(solarSystemIndex);
+    loadPlanetData(url, solarSystemIndex);
     renderPlanet(planetName);
     console.log(solarSystemIndex);
     console.log("next works");
@@ -63,11 +68,13 @@ window.addEventListener('keydown', (event) => {
     if(event.key === "ArrowLeft"){
         solarSystemIndex--;
         planetName = choosePlanetName(solarSystemIndex);
+        loadPlanetData(url, solarSystemIndex);
         renderPlanet(planetName);
     }
     else if(event.key === "ArrowRight"){
         solarSystemIndex++;
         planetName = choosePlanetName(solarSystemIndex);
+        loadPlanetData(url, solarSystemIndex);
         renderPlanet(planetName);
     }
 });
