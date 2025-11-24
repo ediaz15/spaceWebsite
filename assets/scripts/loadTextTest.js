@@ -2,9 +2,9 @@
 //For a prototype, load planet data from file from a button click
 //using app-fetch-basic2.js from gitlab as reference
 
-
-const planetName = document.getElementById("name");
-
+//feels slow BUT it works -> might use the reduce method you talked about PROF!!!
+//I think this may be because of the way im accessing the json data
+const currentPlanetIndex = 4;
 
 //function to load text data from json file
 const loadPlanetData = file => {
@@ -15,25 +15,19 @@ const loadPlanetData = file => {
     .then(data => {
         //now we handle the data -> create elements -> add them to text nodes -> render to dom
         //GETTING ATTRIBUTES BUT THE MANUAL WAY -> WILL REFACTOR
-        const planetTitle = data.planets[0].name; //this should access the array of planets where we need to specify which ones using indexes!
-        
         //taken from: https://www.geeksforgeeks.org/javascript/how-to-iterate-json-object-in-javascript/
         //for each key in the json object, we get its value
         //its like a for each key loop in java where we use keys to access values
-        Object.keys(data.planets[0]).forEach(key => {
-            console.log(`${key}: ${data.planets[0][key]}`);
+        //reviewing dynamic creation of elements then appending to dom: https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
+        Object.keys(data.planets[currentPlanetIndex]).forEach(key => {
+            const value = data.planets[currentPlanetIndex][key];
+            //create a new element based on the key
+            const planetDataContainer = document.getElementById(key);
+            const planetDataText = document.createTextNode(value);
+            //using the pattern we add it to the container
+            planetDataContainer.appendChild(planetDataText);
         });
 
-        const planetDataContainer = document.createElement("h1");
-        const planetDataText = document.createTextNode(planetTitle);
-        //we add the text to the container
-        planetDataContainer.appendChild(planetDataText);
-        //send it to the dom body
-        //we can replace the text content of the existing container
-        planetName.textContent = planetTitle;
-        //based on this: https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent
-        //log to console for testing
-        console.log("Current accessed planet: " + planetTitle);
     })
 };
 
