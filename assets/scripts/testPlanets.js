@@ -201,7 +201,7 @@ function animate() {
     //I've played with the constants here until it looked good 
     //checks if the object is actually there
     if(object){
-        object.rotation.y = -2 + mouseX / window.innerWidth * 3;
+        object.rotation.y = -5 + mouseX / window.innerWidth * 3;
         object.rotation.x = -1 + mouseY * 2.5 / window.innerHeight;
     }
     renderer.render(scene, camera);
