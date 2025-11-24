@@ -79,11 +79,6 @@ function createPlanetScene(){
 }
 
 
-//creating the camera
-function createPlanetCamera(){
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    return camera;
-}
 
 //setting up the renderer
 function createPlanetRenderer(){
@@ -209,7 +204,8 @@ function animate() {
 
 //setting up stuff
 const scene = createPlanetScene();
-const camera = createPlanetCamera();
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+
 //Set how far the camera will be from the 3D model
 //LOOKS LIKE I WAS MISSING THIS PORTION HERE!!!!!
 planetSize = getPlanetSize(planetName);

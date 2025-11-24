@@ -3,7 +3,7 @@
 //using app-fetch-basic2.js from gitlab as reference
 
 
-const planetName = document.getElementById("planetName");
+const planetName = document.getElementById("name");
 
 
 //function to load text data from json file
@@ -14,8 +14,16 @@ const loadPlanetData = file => {
     planetData.then(response => response.json())
     .then(data => {
         //now we handle the data -> create elements -> add them to text nodes -> render to dom
-        const planetTitle = data.planets[1].name; //this should access the array of planets where we need to specify which ones using indexes!
-       
+        //GETTING ATTRIBUTES BUT THE MANUAL WAY -> WILL REFACTOR
+        const planetTitle = data.planets[0].name; //this should access the array of planets where we need to specify which ones using indexes!
+        
+        //taken from: https://www.geeksforgeeks.org/javascript/how-to-iterate-json-object-in-javascript/
+        //for each key in the json object, we get its value
+        //its like a for each key loop in java where we use keys to access values
+        Object.keys(data.planets[0]).forEach(key => {
+            console.log(`${key}: ${data.planets[0][key]}`);
+        });
+
         const planetDataContainer = document.createElement("h1");
         const planetDataText = document.createTextNode(planetTitle);
         //we add the text to the container

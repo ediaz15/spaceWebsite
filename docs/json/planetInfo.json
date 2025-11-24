@@ -3,8 +3,8 @@
         {
             "name": "Mercury",
             "description":"Mercury's surface temperatures are both extremely hot and cold. Because the planet is so close to the Sun, day temperatures can reach highs of 800°F (430°C). Without an atmosphere to retain that heat at night, temperatures can dip as low as -290°F (-180°C). Despite its proximity to the Sun, Mercury is not the hottest planet in our solar system – that title belongs to nearby Venus, thanks to its dense atmosphere. But Mercury is the fastest planet, zipping around the Sun every 88 Earth days.",
-            "size": "Equatorial Radius: 1,516 mi (2,440 km) radius; about 1/3 the size of Earth.",
-            "distance": "Average distance from Sun ~57.9 million km (36 million mi) or 0.4 AU.",
+            "sizeRadius": "1,516 mi (2,440 km)",
+            "distanceFromSun": "~57.9 million km (36 million mi) or 0.4 AU.",
             "formation": "Formed about 4.5 billion years ago when gravity pulled swirling gas and dust together.",
             "structure": "The second densest planet after Earth. It has a large metallic core, about 85% of its radius, that is partly molten or liquid. It has a thin outer shell (mantle and crust) and possesses a thin 'exosphere' instead of an atmosphere.",
             "surface": "Resembles Earth's Moon, scarred by many impact craters. Features are named after famous deceased artists, musicians, or authors. Surface temperatures are extreme, ranging from -180°C (-290°F) to 430°C (800°F)."
@@ -12,8 +12,8 @@
         {
             "name": "Venus",
             "description":"Venus is the second planet from the Sun, and Earth's closest planetary neighbor. Venus is the third brightest object in the sky after the Sun and Moon. Venus spins slowly in the opposite direction from most planets. Venus is similar in structure and size to Earth, and is sometimes called Earth's evil twin. Its thick atmosphere traps heat in a runaway greenhouse effect, making it the hottest planet in our solar system with surface temperatures hot enough to melt lead. Below the dense, persistent clouds, the surface has volcanoes and deformed mountains.",
-            "size": "Equatorial Radius: 3,760 mi (6,052 km) radius; only slightly smaller than Earth.",
-            "distance": "Average distance from Sun ~108.2 million km (67.24 million mi) or 0.72 AU.",
+            "sizeRadius": "3,760 mi (6,052 km)",
+            "distanceFromSun": "~108.2 million km (67.24 million mi) or 0.72 AU.",
             "formation": "Formed about 4.5 billion years ago; similar size to Earth.",
             "structure": "A terrestrial planet with an iron core (approximately 3,000 km in radius) and a silicate mantle and crust. It has no global magnetic field. It is enveloped by a thick atmosphere, composed mostly of the greenhouse gas carbon dioxide, and clouds of sulfuric acid.",
             "surface": "The hottest planet in the solar system with surface temperatures reaching 470°C (880°F). Its surface features include volcanoes and mountains, and it is thought to have been completely resurfaced by volcanic activity 300 to 500 million years ago."
@@ -21,8 +21,8 @@
         {
             "name": "Earth",
             "description":"While Earth is only the fifth largest planet in the solar system, it is the only planet in our solar system with liquid water on the surface. Just slightly larger than nearby Venus, Earth is the biggest of the four planets closest to the Sun, all of which are made of rock and metal. Earth is the only planet in the solar system whose English name does not come from Greek or Roman mythology. The name was taken from Old English and Germanic. It simply means 'the ground.' There are, of course, many names for our planet in the thousands of languages spoken by the people of the third planet from the Sun.",
-            "size": "Equatorial Radius: 3,959 mi (6,371 km) radius.",
-            "distance": "Average distance from Sun ~150 million km (93 million mi), defined as 1 AU.",
+            "sizeRadius": "3,959 mi (6,371 km)",
+            "distanceFromSun": "~150 million km (93 million mi), defined as 1 AU.",
             "formation": "Formed about 4.5 billion years ago when gravity pulled swirling gas and dust together.",
             "structure": "Composed of four main layers: a solid inner core of iron and nickel, a liquid outer core, a silicate mantle, and a crust. Its lithosphere is divided into huge plates that are constantly moving (plate tectonics).",
             "surface": "A rocky, terrestrial planet with a solid and active surface of mountains, valleys, and plains. It is an ocean planet, with water covering 70% of its surface, supporting life within a nitrogen-oxygen atmosphere."
@@ -30,8 +30,8 @@
         {
             "name": "Mars",
             "description":"The fourth planet from the Sun, Mars is a dusty, cold, desert world with a very thin atmosphere. Mars was named by the ancient Romans for their god of war because its reddish color was reminiscent of blood. The Red Planet is actually many colors. At the surface we see colors such as brown, gold and tan. The reason Mars looks reddish is due to oxidization—or rusting—of iron in the rocks, regolith (Martian “soil”), and dust of Mars. This dust gets kicked up into the atmosphere and from a distance makes the planet appear mostly red. Mars is home to the largest volcano in the solar system, Olympus Mons. It's three times taller than Earth's Mt. Everest with a base the size of the state of New Mexico.",
-            "size": "Equatorial Radius: 2,106 mi (3,390 km) radius; about half the size of Earth.",
-            "distance": "Average distance from Sun ~228 million km (142 million mi) or 1.5 AU.",
+            "sizeRadius": "2,106 mi (3,390 km)",
+            "distanceFromSun": "~228 million km (142 million mi) or 1.5 AU.",
             "formation": "Formed about 4.5 billion years ago from swirling gas and dust.",
             "structure": "A terrestrial planet with a dense core of iron, nickel, and sulfur, a rocky mantle, and a crust. Its atmosphere is very thin and contains more than 95% carbon dioxide.",
             "surface": "A dusty, cold, desert world, often called the Red Planet due to the oxidization (rusting) of iron minerals in its dirt. It has seasons, polar ice caps, canyons (like Valles Marineris), and the largest volcano in the solar system (Olympus Mons)."
@@ -39,8 +39,8 @@
         {
             "name": "Jupiter",
             "description":"Jupiter's signature stripes and swirls are actually cold, windy clouds of ammonia and water, floating in an atmosphere of hydrogen and helium. The dark orange stripes are called belts, while the lighter bands are called zones, and they flow east and west in opposite directions. Jupiter’s iconic Great Red Spot is a giant storm bigger than Earth that has raged for hundreds of years. The king of planets was named for Jupiter, king of the gods in Roman mythology. Most of its moons are also named for mythological characters, figures associated with Jupiter or his Greek counterpart, Zeus.",
-            "size": "Equatorial Radius: 43,441 mi (69,911 km) radius; about 11x Earth's radius.",
-            "distance": "Average distance from Sun ~778 million km (484 million mi) or 5.2 AU.",
+            "sizeRadius": "43,441 mi (69,911 km)",
+            "distanceFromSun": "~778 million km (484 million mi) or 5.2 AU.",
             "formation": "The oldest planet, forming about 4.6 billion years ago by rapid accumulation of gas around a massive core.",
             "structure": "A gas giant made mostly of hydrogen and helium. Deep inside, pressure compresses the hydrogen gas into a vast ocean of liquid metallic hydrogen. The central core is massive and may be 'dilute' or partially dissolved.",
             "surface": "No true solid surface; it is mostly swirling gases and liquids. Its appearance is dominated by colorful cloud bands and cyclonic storms, including the Great Red Spot, a giant storm raging for centuries."
@@ -48,8 +48,8 @@
         {
             "name": "Saturn",
             "description":"Like fellow gas giant Jupiter, Saturn is a massive ball made mostly of hydrogen and helium. Saturn is not the only planet to have rings, but none are as spectacular or as complex as Saturn's. Saturn also has dozens of moons. From the jets of water that spray from Saturn's moon Enceladus to the methane lakes on smoggy Titan, the Saturn system is a rich source of scientific discovery and still holds many mysteries.",
-            "size": "Equatorial Radius: 36,184 mi (58,232 km) radius; about 9x Earth's radius.",
-            "distance": "Average distance from Sun ~1.43 billion km (886 million mi) or 9.5 AU.",
+            "sizeRadius": "36,184 mi (58,232 km)",
+            "distanceFromSun": "~1.43 billion km (886 million mi) or 9.5 AU.",
             "formation": "A gas giant formed by gas accretion around a solid core about 4.6 billion years ago. Its prominent ring system is formed from icy debris.",
             "structure": "Made mostly of hydrogen and helium. It has a dense core of metals like iron and nickel, enveloped by liquid metallic hydrogen and liquid hydrogen.",
             "surface": "No true solid surface. It is known for its spectacular ring system, made of billions of small chunks of ice and rock. Its atmosphere features a massive, six-sided jet stream (the hexagon) at its north pole."
@@ -57,8 +57,8 @@
         {
             "name": "Uranus",
             "description":"Uranus is a very cold and windy world. The ice giant is surrounded by 13 faint rings and 28 small moons. Uranus rotates at a nearly 90-degree angle from the plane of its orbit. This unique tilt makes Uranus appear to spin sideways, orbiting the Sun like a rolling ball. Uranus was the first planet found with the aid of a telescope. It was discovered in 1781 by astronomer William Herschel, although he originally thought it was either a comet or a star. It was two years later that the object was universally accepted as a new planet, in part because of observations by astronomer Johann Elert Bode.",
-            "size": "Equatorial Radius: 15,759 mi (25,362 km) radius; about 4x Earth's radius.",
-            "distance": "Average distance from Sun ~2.9 billion km (1.8 billion mi) or 19 AU.",
+            "sizeRadius": "15,759 mi (25,362 km) radius",
+            "distanceFromSun": "~2.9 billion km (1.8 billion mi) or 19 AU.",
             "formation": "An ice giant that formed from heavier volatiles and ices in the outer solar system about 4.5 billion years ago.",
             "structure": "An ice giant composed of a hot, dense fluid of 'icy' materials (water, methane, and ammonia) above a small rocky core. Methane gas in the atmosphere gives it a blue-green color.",
             "surface": "No true solid surface; it is mostly swirling fluids. Its unique axial tilt of 97.77 degrees causes it to spin sideways, resulting in extreme seasonal variations. It is surrounded by two sets of faint rings."
@@ -66,8 +66,8 @@
         {
             "name": "Neptune",
             "description":"Dark, cold, and whipped by supersonic winds, ice giant Neptune is more than 30 times as far from the Sun as Earth. Neptune is the only planet in our solar system not visible to the naked eye. In 2011 Neptune completed its first 165-year orbit since its discovery in 1846. Neptune is so far from the Sun that high noon on the big blue planet would seem like dim twilight to us. The warm light we see here on our home planet is roughly 900 times as bright as sunlight on Neptune.",
-            "size": "Equatorial Radius: 15,299 mi (24,622 km) radius; only slightly smaller than Uranus.",
-            "distance": "Average distance from Sun ~4.5 billion km (2.8 billion mi) or 30 AU.",
+            "sizeRadius": "15,299 mi (24,622 km)",
+            "distanceFromSun": "~4.5 billion km (2.8 billion mi) or 30 AU.",
             "formation": "An ice giant that formed in the outer solar system from icy/rocky materials about 4.5 billion years ago, potentially closer to the Sun before moving outward.",
             "structure": "The densest of the giant planets. It has an icy mantle and rocky core with a hydrogen-helium and methane-rich atmosphere. Methane causes its vivid brighter blue color.",
             "surface": "No solid surface. It has active weather with strong winds and massive storms, such as the Great Dark Spot observed by Voyager 2. It has at least five main rings and four prominent ring arcs."
@@ -75,8 +75,8 @@
         {
             "name": "Pluto",
             "description":"Pluto is a complex and mysterious world with mountains, valleys, plains, craters, and glaciers. It is located in the distant Kuiper Belt. Discovered in 1930, Pluto was long considered our solar system's ninth planet. But after the discovery of similar worlds deeper in the Kuiper Belt, Pluto was reclassified as a dwarf planet in 2006 by the International Astronomical Union.",
-            "size": "Dwarf planet; equatorial radius ~ 738 mi (1,187 km); About 1/5th the width of Earth.",
-            "distance": "Average distance from Sun ~5.9 billion km (3.7 billion mi) or 39 AU. Its orbit is eccentric and inclined.",
+            "sizeRadius": "738 mi (1,187 km)",
+            "distanceFromSun": "~5.9 billion km (3.7 billion mi) or 39 AU. Its orbit is eccentric and inclined.",
             "formation": "Formed in the Kuiper Belt from icy and rocky planetesimals about 4.5 billion years ago.",
             "structure": "An icy mantle over a rock-rich core; scientists believe it may have a subsurface ocean. It has a very tenuous atmosphere composed mostly of nitrogen, methane, and carbon monoxide.",
             "surface": "A complex world with varied terrain, including water-ice mountains, plains of nitrogen/methane ice, glaciers, and craters. Its surface is among the most contrasting in the solar system."
