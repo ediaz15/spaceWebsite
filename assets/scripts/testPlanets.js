@@ -51,8 +51,6 @@ prevButton.addEventListener('click' , () => {
     planetName = choosePlanetName(solarSystemIndex);
     loadPlanetData(url, solarSystemIndex);
     renderPlanet(planetName);
-    console.log(solarSystemIndex);
-    console.log("prev works");
 });
 
 nextButton.addEventListener('click', () => {
@@ -60,8 +58,6 @@ nextButton.addEventListener('click', () => {
     planetName = choosePlanetName(solarSystemIndex);
     loadPlanetData(url, solarSystemIndex);
     renderPlanet(planetName);
-    console.log(solarSystemIndex);
-    console.log("next works");
 });
 
 //adding the event listener for left and right arrows

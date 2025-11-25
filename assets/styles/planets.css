@@ -7,11 +7,16 @@
 
 .planetText{
     width:30%;
-    padding:10% 5% 10% 5%;
+    padding-left: 5%;
+    padding-right: 5%;
     border-radius: 5px;
     /*should help when resizing + avoid clips ??*/
     overflow: auto;
     border: 2px solid purple;
+}
+
+.planetTopSection{
+    border: 2px solid green;
 }
 
 .planetContainer{
