@@ -29,12 +29,15 @@ const solarSystem = ["mercury", "venus", "earth", "mars", "jupiter", "saturn", "
 
 //Need to ensure that it loops back around [0,8] 
 let solarSystemIndex = 0;
-
+function getPlanetIndex(solarSystemIndex){
+    return Math.abs(solarSystemIndex % solarSystem.length);
+}
 function choosePlanetName(solarSystemIndex){
     solarSystemIndex = Math.abs(solarSystemIndex % solarSystem.length);
     var obj = solarSystem[solarSystemIndex];
     return obj;
 }
+
 var planetName = choosePlanetName(solarSystemIndex);
 const url = "/docs/json/planetInfo.json";
 //handling button clicks for prev and next buttons

@@ -18,10 +18,15 @@ const loadPlanetData = (file, currentPlanetIndex) => {
         //for each key in the json object, we get its value
         //its like a for each key loop in java where we use keys to access values
         //reviewing dynamic creation of elements then appending to dom: https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
+        //manual checking and processing of planet indexes -> will prob use a function to do this and repeat myself less
+        currentPlanetIndex = Math.abs(currentPlanetIndex % 9);
+
         Object.keys(data.planets[currentPlanetIndex]).forEach(key => {
             const value = data.planets[currentPlanetIndex][key];
             //create a new element based on the key
+            
             const planetDataContainer = document.getElementById(key);
+            planetDataContainer.textContent = ""; //clearing previous data before adding new data!
             const planetDataText = document.createTextNode(value);
             //using the pattern we add it to the container
             planetDataContainer.appendChild(planetDataText);
