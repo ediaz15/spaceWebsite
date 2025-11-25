@@ -22,27 +22,28 @@
         <a href="about.html">About</a>
         <a href="planets.html">Planets</a>
     </nav>
-    <div class="planetContainer">
-    <div class="planetText">
-        <div class="planetTopSection">
-            <h1 id="name"></h1>
-            <p id="description">Description: </p>
+    <section class="planetContainer">
+        <div class="planetText">
+            <div class="planetTopSection">
+                <h1 id="name"></h1>
+                <p id="description"></p>
+            </div>
+            <div class="planetDataContainer">
+                <p id="sizeRadius"></p>
+                <p id="distanceFromSun"></p>
+                <p id="formation"></p>
+                <p id="structure"></p>
+                <p id="surface"></p>
+            </div>
         </div>
-        <div class="planetDataContainer">
-            <p id="sizeRadius">Radius: </p>
-            <p id="distanceFromSun">Distance From Sun: </p>
-            <p id="formation">Formation: </p>
-            <p id="structure">Structure: </p>
-            <p id="surface">Surface: </p>
+        <div class="modelContainer">
+            <div id="container3D"></div>           
+            <div class="buttonsContainer">
+                <button id="prev">prev</button> 
+                <button id="next">next</button> 
+            </div>
         </div>
-    </div>
-    <div class="modelContainer">
-        <div id="container3D"></div>           
-        <div class="buttonsContainer">
-            <button id="prev">prev</button> 
-            <button id="next">next</button> 
-        </div>
-    </div>
+    </section>
     <!--Linking JS scripts-->
 <script type="module" src="/assets/scripts/testPlanets.js"></script>
 <script type="module" src="/assets/scripts/loadTextTest.js"></script>
