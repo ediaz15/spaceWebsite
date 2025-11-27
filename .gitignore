@@ -1,3 +1,5 @@
 
 # hide sensitive environment variables
 .env
+# no exporting node modules, only the package json stuff
+node_modules/
