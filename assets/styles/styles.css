@@ -30,8 +30,8 @@ header {
 /*Hero image*/
 .heroSection{
     background-image: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .9)), url("/media/images/heroStarrySky.jpg");
-    min-height: 80%; /*how much of the screen to c
     /*Centers the image and scales i think*/
+    height: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -97,7 +97,7 @@ header {
     justify-content: space-between;
     /*Space inbetween hero and nasaExplore*/
     /*top|right|bottom|left IF just using margin prop*/
-    margin-top: 10em; 
+    margin-top: 5em; 
     height: 80%;
     border: rgba(37,37,37,.37) 2px solid
 }
@@ -173,9 +173,9 @@ WHY IS FLEXBOX SO WEIRD
     /*Tells flexbox how items should be aligned*/
     flex-direction: column;
     
-    border: rgba(37,37,37,.37) 2px solid;
+    border: 2px solid black;
 
-    margin-top: 10em; 
+    margin-top: 5em; 
     height: 80%;
 }
 
