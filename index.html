@@ -25,9 +25,9 @@
     <section class="heroSection">
         <!--Hero Image courtesy of Fleuber-->>
         <div class="heroImageText">
-            <h1 id="heroHeader">Explore the Unknown</h1>
-            <p id="heroText">Erick Diaz COMP 324 Project</p>
-            <button id="heroButton" onclick="window.location.href='about.html'">Learn More</button>
+            <h1 id="heroHeader" class="hidden">Explore the Unknown</h1>
+            <p id="heroText" class="hidden">Erick Diaz COMP 324 Project</p>
+            <button id="heroButton" class="hidden" onclick="window.location.href='about.html'">Learn More</button>
         </div>
     </section>
     </header>
@@ -35,40 +35,40 @@
         <!--First Section: About Nasa and How They Explore Space-->
         <section class="nasaExplore">
             <div class="nasaExploreText">
-                <h1>Traverse the Cosmos with NASA</h1>
-                <p>Through the power of science, research, and human will, NASA continues to scout the universe. With new technologies being developed and an ever increasing understanding of what is around us, NASA will push through the challenges of space exploration. </p>
-                <p>This should be a new text section</p>
+                <h1 class="hidden">Traverse the Cosmos with NASA</h1>
+                <p class="hidden">Through the power of science, research, and human will, NASA continues to scout the universe. With new technologies being developed and an ever increasing understanding of what is around us, NASA will push through the challenges of space exploration. </p>
+                <p class="hidden">This should be a new text section</p>
                 <div class="nasaExploreButton">
-                    <button id="nasaButton" type="button" onclick="window.location.href='https://www.nasa.gov/'">Visit Nasa</button> <!--Perhaps view how to add nasa icon for the button... visit *Nasa Logo*-->
+                    <button id="nasaButton" class="hidden" type="button" onclick="window.location.href='https://www.nasa.gov/'">Visit Nasa</button> <!--Perhaps view how to add nasa icon for the button... visit *Nasa Logo*-->
                 </div>
             </div>
             <section class="nasaExploreImage">
-                <img src="./media/images/astronautNasa.jpg">
+                <img src="./media/images/astronautNasa.jpg" class="hidden" alt="Nasa Astronaut in space with earth in the background">
             </section> 
         </section>
         <!--Second Section: planetsIntro-->
         <section class="planetsIntro">
-            <h1 id="planetsIntroTitle">Our Solar System is Full of Wonders</h1>
+            <h1 id="planetsIntroTitle" class="hidden">Our Solar System is Full of Wonders</h1>
             <div class="planetIntroText">
-                <h4>Whether you are aiming for Mars or dreaming of a journey to Pluto, the Solar System has wonders waiting for you </h4>
+                <h4 class="hidden">Whether you are aiming for Mars or dreaming of a journey to Pluto, the Solar System has wonders waiting for you </h4>
             </div>
             <div class="planetIntroVideoContainer">
             <!--There could be issues for browsers supporting videos...saw in mdn docs, but def want this to autoplay-->
-                <video id="planetIntroVideo"src="/media/video/saturnRings.mp4" type="video/mp4" alt="Close up video of Satellite near Saturn and its rings" height="70%" width="100%" muted autoplay loop>
+                <video id="planetIntroVideo" class="hidden" src="/media/video/saturnRings.mp4" type="video/mp4" alt="Close up video of Satellite near Saturn and its rings" height="70%" width="100%" muted autoplay loop>
                 </video>
                 <!-- Use controls , a poster , a <track kind="captions"> , and
     relative path ./media/video/saturnRings.mp4-->
-                <p>Video Courtesy of: <a href="https://pixabay.com/users/28244525/">AiVreaSaStii</a> </p>
+                <p class="hidden">Video Courtesy of: <a href="https://pixabay.com/users/28244525/">AiVreaSaStii</a> </p>
             </div>
         </section>
         <!--Third Section: Nasa Image of the day || Updated daily using Nasa API!!!-->
         <section class="nasaImageOfDay">
-            <h1>Nasa Image of the Day</h1>
+            <h1 class="hidden">Nasa Image of the Day</h1>
             <div class="dailyImageContainer">
-                <img id="nasaDailyImg" src="" alt="Nasa Image of the Day will be displayed!">
+                <img id="nasaDailyImg" class="hidden" src="" alt="Nasa Image of the Day API is down :( Try again later!)">
                 <div class="nasaImgMetadata">
-                    <h4 id="nasaImgTitle">Title</h4>
-                    <p id="nasaImgDescription">Description</p>
+                    <h3 id="nasaImgTitle" class="hidden">Title</h3>
+                    <p id="nasaImgDescription" class="hidden">Description</p>
                 </div>
             </div>
         </section>
@@ -79,6 +79,7 @@
     <!--Section about using NASA assets, etc-->
     <!-- https://www.nasa.gov/nasa-brand-center/images-and-media/-->
     <script type="module" src="/assets/scripts/nasaImgOfDay.js"></script>
+    <script type="module" src="/assets/scripts/scrollAnimation.js" defer></script>
 
 </body>
 </html>

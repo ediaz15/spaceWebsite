@@ -17,7 +17,7 @@ const nasaImgElement = document.getElementById("nasaDailyImg");
 
 function imgOfDay(){
     try {
-        const apiKey = "erm youre still not getting my api key";
+        const apiKey = "erm the api is down :(";
         let today = new Date();
         console.log(today.toISOString().slice(0,10));
         //the isosstringmethod https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
@@ -25,24 +25,17 @@ function imgOfDay(){
             fetch(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${today.toISOString().slice(0,10)}`)
             .then(response => response.json())
             .then(data => {
-                //prints the entire data object from the api
-                console.log(data);
                 //get the img metadata and console log it
                 const imgUrl = data.url; //will need it as the img src attri
                 const imgTitle = data.title; //used for the title of the image
                 const imgExplanation = data.explanation; //used for the description ield in the index.html file
-                
                 //adding the content to the dom! similar process as in planetData
                 //changing img src attri -> https://www.tutorialspoint.com/how-to-change-the-src-attribute-of-an-img-element-in-javascript-jquery
                 nasaImgElement.src = imgUrl;
                 //text content like as saw in loadPlanetData.js, not sure if i sure clear it BUT possibly could
                 nasaImgTitle.textContent = imgTitle;
                 nasaImgDescription.textContent = imgExplanation;
-                
-                console.log("Image URL: " + imgUrl);
-                console.log("Title: " + imgTitle);
-                console.log("Explanation: " + imgExplanation);
-        })
+        });
     } catch (e){
         console.log(e + "API seems to be down currently??");
     }
