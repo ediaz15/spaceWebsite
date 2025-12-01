@@ -234,16 +234,46 @@ WHY IS FLEXBOX SO WEIRD
 
 /*#endregion planetsIntro*/
 
-.nasaImageOfDay{
-    margin-top: 5em; 
-    height: 80%;
-    border: 2px solid black;
-    text-align: center;
-    }
 
 /***********************
 **      Section 3     **
 ************************/
+
+#nasaImgOfDayHeader {
+    text-align: center;
+    margin-top: 2em;
+}
+.nasaImageOfDay{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr;
+    margin-top: 5em; 
+    height: 80%;
+    border: 2px solid black;
+}
+
+.dailyImageContainer{
+    width: auto;
+    height: 100%;
+    border: 2px dotted gray;
+}
+.nasaImgMetadata{
+    width: auto;
+    height: 100%;
+    border: 2px dotted gray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#nasaDailyImg{
+    width: 100%;
+    height: auto;
+}
+#nasaImgDescription{
+    padding: 1em;
+}
 
 
 /***********************
@@ -258,6 +288,7 @@ WHY IS FLEXBOX SO WEIRD
 body,html {
     height: 100%;
     margin: 0;
+    padding: 0;
     /*Makes jumping around page smoother, not actual user scrolling on site*/
     scroll-behavior: smooth;
 }
