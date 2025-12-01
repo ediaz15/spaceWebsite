@@ -1,3 +1,4 @@
+
 /*index.html styling*/
 /*Structure:
     - Hero Section
@@ -5,12 +6,12 @@
         -heroImageText 
         -heroButton    
         -additional hero header/text styling
-
     - nasaExplore
         -nasaExploreText
         -nasaExploreImage
         -nasaButtonContainer
             -nasaButton
+    - footer
     - Universal Styling
         -body/html styling
         -p fonts
@@ -277,8 +278,16 @@ WHY IS FLEXBOX SO WEIRD
 
 
 /***********************
-**      Section 4     **
+**      Footer     **
 ************************/
+
+#sourcesFooter {
+    text-align: center;
+    padding: 1em;
+    left: 0;
+    bottom: 0;
+    letter-spacing: 0.05em;
+}
 
 /*#region univStyling*/
 /*Universal Styling*/
