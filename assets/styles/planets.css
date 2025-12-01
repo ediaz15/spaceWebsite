@@ -1,5 +1,7 @@
 
 .planetDataContainer p {
+    height: 100%;
+    margin: auto;
     display: flex;
     justify-content: space-between;
     border: 2px solid orange;
@@ -67,6 +69,19 @@ This also lets the model expand without covering buttons!
 }
 #next {
     border:2px solid red;
+}
+
+
+.hidden, .show {
+    transition: opacity 1s, transform 1s;
+}
+.hidden {
+    opacity: 0;
+    transform: translateY(50px);
+}
+.show {
+    opacity: 1;
+    transform: none;
 }
 
 

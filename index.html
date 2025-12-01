@@ -11,7 +11,10 @@
     <!--Need to add a description AND a favicon!-->
     <!--Linking stylesheet-->
     <link rel="stylesheet" type="text/css" href="assets/styles/styles.css">
-
+    <!--Favicon links-->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/oddysseyNineFavicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/oddysseyNineFavicons/favicon-16x16.png">
+    <link rel="manifest" href="assets/images/oddysseyNineFavicons/site.webmanifest">
 </head>
 <body>
     <!--NavBar for navigation! Maybe gon add a side menu?.....-->
@@ -37,7 +40,7 @@
             <div class="nasaExploreText">
                 <h1 class="hidden">Traverse the Cosmos with NASA</h1>
                 <p class="hidden">Through the power of science, research, and human will, NASA continues to scout the universe. With new technologies being developed and an ever increasing understanding of what is around us, NASA will push through the challenges of space exploration. </p>
-                <p class="hidden">This should be a new text section</p>
+                <p class="hidden">With the usage of the NASA API for a daily image, assets., and data, this site was built to capture a glimpse of the vastness of space and the incredible discoveries made by NASA.</p>
                 <div class="nasaExploreButton">
                     <button id="nasaButton" class="hidden" type="button" onclick="window.location.href='https://www.nasa.gov/'">Visit Nasa</button> <!--Perhaps view how to add nasa icon for the button... visit *Nasa Logo*-->
                 </div>
@@ -68,12 +71,14 @@
             </div>
                 <div class="nasaImgMetadata">
                     <h1 class="hidden" id="nasaImgOfDayHeader">Nasa Image of the Day</h1>
-                    <h3 id="nasaImgTitle" class="hidden">Title</h3>
-                    <p id="nasaImgDescription" class="hidden">Description</p>
+                        <h3 id="nasaImgTitle" class="hidden">Title</h3>
+                        <p id="nasaImgDescription" class="hidden">Description</p>
                 </div>
         </section>
-        <!--Fourth Section: Mars Rover Photos using carousel!!-->
     </main>
+    <footer>
+        <p>Erick Diaz &copy; 2024</p>
+    </footer>
     <!--Linking JS scripts-->
     <script type="text/javascript" src="./assets/scripts/index.js"></script>
     <!--Section about using NASA assets, etc-->

@@ -272,7 +272,7 @@ WHY IS FLEXBOX SO WEIRD
     height: auto;
 }
 #nasaImgDescription{
-    padding: 1em;
+    padding: 1em 10% 1em 10%; 
 }
 
 
