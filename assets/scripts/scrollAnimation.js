@@ -3,7 +3,15 @@
 //adapted from https://www.youtube.com/watch?v=T33NN_pPeNI
 //uses: https://www.geeksforgeeks.org/javascript/introduction-to-intersection-observer/
 //checks visibility of element -> can use to trigger animations on scroll using css!!
-const observer = new IntersectionObserver((entries) => {
+//modifying the intersection observer's margin
+const observerConstructor = {
+
+    root: null,
+    rootMargin: "0px 0px -50px 0px", 
+    threshold: 0.5,
+}
+
+const observer = new IntersectionObserver((entries, observerConstructor)=>{
     entries.forEach((entry) => {
         //checks if the element is visible
         if (entry.isIntersecting) {

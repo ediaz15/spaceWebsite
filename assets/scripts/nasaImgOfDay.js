@@ -17,7 +17,7 @@ const nasaImgElement = document.getElementById("nasaDailyImg");
 
 function imgOfDay(){
     try {
-        const apiKey = "erm the api is down :(";
+        const apiKey = "erm the api works now??";
         let today = new Date();
         console.log(today.toISOString().slice(0,10));
         //the isosstringmethod https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
@@ -25,6 +25,7 @@ function imgOfDay(){
             fetch(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${today.toISOString().slice(0,10)}`)
             .then(response => response.json())
             .then(data => {
+                console.log(data);
                 //get the img metadata and console log it
                 const imgUrl = data.url; //will need it as the img src attri
                 const imgTitle = data.title; //used for the title of the image

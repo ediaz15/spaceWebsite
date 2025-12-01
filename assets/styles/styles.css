@@ -29,15 +29,20 @@ header {
 }
 
 /*also adapted from: https://www.youtube.com/watch?v=T33NN_pPeNI*/
+/*Adjusted using: https://dev.to/jslim/fading-up-sections-using-intersection-observer-3fhj*/
+
 .hidden, .show {
-  transition: opacity 1s;
+    transition: opacity 1s, transform 1s;
 }
 .hidden {
-  opacity: 0;
+    opacity: 0;
+    transform: translateY(50px);
 }
 .show {
-  opacity: 1;
+    opacity: 1;
+    transform: none;
 }
+
 /*Hero image*/
 .heroSection{
     background-image: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .9)), url("/media/images/heroStarrySky.jpg");
