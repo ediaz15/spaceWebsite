@@ -37,7 +37,7 @@ This also lets the model expand without covering buttons!
     align-items: center;
     width: 80%;
     height: 100%;
-    overflow:hidden; /*Hidden just overall..*/
+    overflow: hidden; /*Hidden just overall..*/
     z-index: 2;
 }
 

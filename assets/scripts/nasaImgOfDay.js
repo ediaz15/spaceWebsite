@@ -17,13 +17,20 @@ const nasaImgElement = document.getElementById("nasaDailyImg");
 
 function imgOfDay(){
     try {
-        const apiKey = "Ht5D8fd7AQU3Gg4X13cfx5U34bIBFU1eggMth9zn";
+        const apiKey = "";
         let today = new Date();
         console.log(today.toISOString().slice(0,10));
         //the isosstringmethod https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
         //ensures that the string representing the date is in the date time format -> slice string together to get only the date part!
             fetch(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${today.toISOString().slice(0,10)}`)
-            .then(response => response.json())
+            .then(response => {
+                //handles any strange api error by checking response status
+                if(!response.ok){
+                    getNasaDailyImgPlaceholder();
+                    throw new Error("Network response was not ok ;-;");
+                }
+                return response.json();
+            })
             .then(data => {
                 console.log(data);
                 //get the img metadata and console log it
@@ -38,8 +45,22 @@ function imgOfDay(){
                 nasaImgDescription.textContent = imgExplanation;
         });
     } catch (e){
-        console.log(e + "API seems to be down currently??");
+        console.error("Error fetching NASA Image of the Day :( ", e);
     }
+}
+//incase the api is down or something, we use a placeholder image from a local json file
+function getNasaDailyImgPlaceholder(){
+    const data = fetch("docs/json/imgOfDayPlaceholder.json");
+    data.then(response => response.json())
+    .then(imgPlaceholderData => {
+        console.log(imgPlaceholderData);
+        const placeholderUrl = imgPlaceholderData.planetUrl;
+        const placeholderTitle = imgPlaceholderData.planetTitle;
+        const placeholderDescription = imgPlaceholderData.planetDescription;
+        nasaImgTitle.textContent = placeholderTitle;
+        nasaImgDescription.textContent = placeholderDescription;
+        nasaImgElement.src = placeholderUrl;
+    });
 }
 
 imgOfDay();
