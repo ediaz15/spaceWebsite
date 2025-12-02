@@ -45,8 +45,9 @@ header {
 }
 
 /*Hero image*/
+/*Heroimage taken from: https://www.freepik.com/free-vector/abstract-splashed-watercolor-textured-background_2632737.htm#fromView=search&page=1&position=4&uuid=3298cea8-d533-48e7-bf72-13c935c2f941&query=Purple+hero+background+space*/
 .heroSection{
-    background-image: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .9)), url("/media/images/heroStarrySky.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .9)), url("/media/images/heroImage.jpg");
     /*Centers the image and scales i think*/
     height: 100%;
     background-position: center;
@@ -68,7 +69,10 @@ header {
 }
 
 #heroButton{
-    padding: 1em;
+    color: white;
+    background-color: #32004F;
+    box-shadow: 0 4px 15px rgba(10, 0, 21, 0.5);
+    padding: 17px;
     border-radius: 10px;
     border: none;
     opacity: 0.7;
@@ -76,9 +80,10 @@ header {
 }
 
 #heroButton:hover {
-    padding: 1em;
+    padding: 20px;
     border: none;
-    background-color: #e7e7e7;
+    background-color: #6B2D8F; 
+    box-shadow: 0 0 20px rgba(184, 127, 231, 0.6);
     opacity: 1;
 }
 /*Edit heroHeader fontsize*/
@@ -132,7 +137,8 @@ header {
     width: 60%;
     height: 100%;
     margin:auto;
-    overflow: hidden; /*Hidden w/o scroll bars*/
+    overflow: hidden; /*Hidden w/o scroll bars*/    
+    box-shadow: 0 0 20px rgba(184, 127, 231, 0.6);
 }
 
 .nasaExploreImage img {
@@ -148,8 +154,10 @@ header {
 }
 
 #nasaButton {
-    color: black;
-    padding: 1em;
+    color: white;
+    background-color: #32004F;
+    box-shadow: 0 4px 15px rgba(126, 5, 255, 0.5);
+    padding: 17px;
     border-radius: 10px;
     border: none;
     opacity: 0.7;
@@ -157,9 +165,10 @@ header {
 }
 /*Button hover styling: https://www.w3schools.com/css/css3_buttons.asp*/
 #nasaButton:hover {
-    padding: 1em;
+    padding: 20px;
     border: none;
-    background-color: #e7e7e7;
+    background-color: #6B2D8F; 
+    box-shadow: 0 0 20px rgba(184, 127, 231, 0.6);
     opacity: 1;
 }
 /*#endregion nasaExplore*/
@@ -225,6 +234,8 @@ WHY IS FLEXBOX SO WEIRD
     width: 100%;
     margin: auto;
     padding: auto;
+    box-shadow: 0 0 20px rgba(184, 127, 231, 0.6);
+    border-radius: 50px;
 }
 
 .planetIntroVideoContainer p{
@@ -256,6 +267,10 @@ WHY IS FLEXBOX SO WEIRD
 .dailyImageContainer{
     width: auto;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     border: 2px dotted gray;
 }
 .nasaImgMetadata{
@@ -271,6 +286,8 @@ WHY IS FLEXBOX SO WEIRD
 #nasaDailyImg{
     width: 100%;
     height: auto;
+    box-shadow: 0 0 20px rgba(184, 127, 231, 0.6);
+    border-radius: 50px;
 }
 #nasaImgDescription{
     padding: 1em 10% 1em 10%; 
@@ -296,20 +313,31 @@ WHY IS FLEXBOX SO WEIRD
 /*https://medium.com/@patrickdunn_15451/beware-default-html-margins-6159ae7a8b3e talks about it here*/
 body,html {
     height: 100%;
-    margin: 0;
     padding: 0;
     /*Makes jumping around page smoother, not actual user scrolling on site*/
     scroll-behavior: smooth;
+    background:#030105;                 /* Deep Nebula - matches hero dark bottom */
+;
 }
+
 
 p {
+    color: #B8B4CC;
     font-family: 'Jost', sans-serif;
-
 }
 
-h1, h3,h4 {
+h1 {
+    color: #EDEAFF;
     font-family: 'Manrope', sans-serif;
+    text-shadow: 0 0 15px #9D7CFF;
 }
 
+
+h2,h3,h4 {
+    color: #EDEAFF;
+    font-family: 'Manrope', sans-serif;
+    text-shadow: 0 0 15px #9D7CFF;
+}
 
 /*#endregion univStyling*/
+

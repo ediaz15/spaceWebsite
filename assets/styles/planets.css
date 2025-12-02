@@ -28,7 +28,7 @@
     justify-content: space-between;
     align-items: center;
     /*Space inbetween hero and nasaExplore*/
-    border: 2px solid black;
+    border: 2px solid rgb(255, 255, 255);
 }
 
 /*the use of position relative and absolute LETS me overlap items
@@ -44,11 +44,11 @@ This also lets the model expand without covering buttons!
     width: 80%;
     height: 100%;
     overflow:hidden; /*Hidden just overall..*/
-    border: 2px solid black
+    border: 2px solid rgb(255, 242, 242)
 }
 
 #container3D{
-    border: 2px dotted black;
+    border: 2px dotted rgb(228, 223, 223);
     border-radius: 100%;
 }
 
@@ -65,12 +65,39 @@ This also lets the model expand without covering buttons!
     gap: 85%; /*YOOOO THIS IS LIFE CHANGING OMG*/
 }
 #prev {
-    border: 2px solid blue;
+    color: white;
+    background-color: #32004F;
+    box-shadow: 0 4px 15px rgba(123, 0, 255, 0.507);
+    padding: 17px;
+    border-radius: 10px;
+    border: none;
+    opacity: 0.7;
+    transition: 0.3s;
+}
+#prev:hover {
+    padding: 20px;
+    border: none;
+    background-color: #6B2D8F; 
+    box-shadow: 0 0 20px rgba(184, 127, 231, 0.6);
+    opacity: 1;
 }
 #next {
-    border:2px solid red;
+    color: white;
+    background-color: #32004F;
+    box-shadow: 0 4px 15px rgba(10, 0, 21, 0.5);
+    padding: 17px;
+    border-radius: 10px;
+    border: none;
+    opacity: 0.7;
+    transition: 0.3s;
 }
-
+#next:hover {
+    padding: 20px;
+    border: none;
+    background-color: #6B2D8F; 
+    box-shadow: 0 0 20px rgba(184, 127, 231, 0.6);
+    opacity: 1;
+}
 
 .hidden, .show {
     transition: opacity 1s, transform 1s;
@@ -92,15 +119,23 @@ body,html {
     margin: 0;
     /*Makes jumping around page smoother, not actual user scrolling on site*/
     scroll-behavior: smooth;
+    background:#030105;                 /* Deep Nebula - matches hero dark bottom */
 }
 
 p {
+    color: #B8B4CC;
     font-family: 'Jost', sans-serif;
 
 }
 
-h1, h4 {
+h1 {
+    color: #EDEAFF;
     font-family: 'Manrope', sans-serif;
+    text-shadow: 0 0 15px #9D7CFF;
 }
-
+h4 {
+    color: #EDEAFF;
+    font-family: 'Manrope', sans-serif;
+    text-shadow: 0 0 15px #9D7CFF;
+}
 /*#endregion univStyling*/
