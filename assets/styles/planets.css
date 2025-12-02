@@ -163,4 +163,36 @@ h4 {
     font-family: 'Manrope', sans-serif;
     text-shadow: 0 0 15px #9D7CFF;
 }
+
+/*From: https://www.w3schools.com/css/css_link.asp*/
+
+
+#sourcesFooter {
+    text-align: center;
+    padding: 1em;
+    left: 0;
+    bottom: 0;
+    letter-spacing: 0.05em;
+}
+
+/* unvisited link */
+a:link {
+  color: #EDEAFF;
+}
+
+/* visited link */
+a:visited {
+  color: #9D7CFF;
+}
+
+/* mouse over link */
+a:hover {
+  color: #6B2D8F;
+}
+
+/* selected link */
+a:active {
+  color: #6B2D8F;
+}
+
 /*#endregion univStyling*/

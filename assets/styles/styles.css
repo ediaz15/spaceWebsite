@@ -143,7 +143,6 @@ body::before {
     /*top|right|bottom|left IF just using margin prop*/
     margin-top: 5em; 
     height: 80%;
-    border: rgba(37,37,37,.37) 2px solid
 }
 
 .nasaExploreText{
@@ -224,7 +223,6 @@ WHY IS FLEXBOX SO WEIRD
     /*Tells flexbox how items should be aligned*/
     flex-direction: column;
     
-    border: 2px solid black;
 
     margin-top: 5em; 
     height: 80%;
@@ -288,7 +286,6 @@ WHY IS FLEXBOX SO WEIRD
     grid-template-rows: 2fr;
     margin-top: 5em; 
     height: 80%;
-    border: 2px solid black;
 }
 
 .dailyImageContainer{
@@ -299,12 +296,12 @@ WHY IS FLEXBOX SO WEIRD
     justify-content: center;
     align-items: center;
     z-index: 2;
-    border: 2px dotted gray;
+    color: white;
+    font-size: 1.5em;
 }
 .nasaImgMetadata{
     width: auto;
     height: 100%;
-    border: 2px dotted gray;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -367,5 +364,28 @@ h2,h3,h4 {
     text-shadow: 0 0 15px #9D7CFF;
 }
 
+/*From: https://www.w3schools.com/css/css_link.asp*/
+
+/* unvisited link */
+a:link {
+  color: #EDEAFF;
+}
+
+/* visited link */
+a:visited {
+  color: #9D7CFF;
+}
+
+/* mouse over link */
+a:hover {
+  color: #6B2D8F;
+}
+
+/* selected link */
+a:active {
+  color: #6B2D8F;
+}
 /*#endregion univStyling*/
+
+
 
