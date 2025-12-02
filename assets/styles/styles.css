@@ -385,6 +385,37 @@ a:hover {
 a:active {
   color: #6B2D8F;
 }
+
+/*referenced used: https://www.w3schools.com/css/css_navbar_horizontal.asp*/
+
+#horizontalNavbar {
+    position: fixed;
+    width: 100%;
+    overflow: hidden;
+    background-color: #03010596;
+    text-align: left;
+    padding: 1em;
+    z-index: 3;
+}
+
+#horizontalNavbar li {
+    list-style-type: none;
+    padding-left: 1em;
+    display: inline;
+}
+#horizontalNavbar li a {
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding-left: 1.5em;
+    font-family: 'jost', sans-serif;
+    font-size: 1.4em;
+}
+
+#horizontalNavbar li a:hover {
+  color: #bdabf5;
+}
+
 /*#endregion univStyling*/
 
 
