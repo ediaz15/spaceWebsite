@@ -160,6 +160,7 @@ body::before {
     margin:auto;
     overflow: hidden; /*Hidden w/o scroll bars*/    
     box-shadow: 0 0 20px rgba(184, 127, 231, 0.6);
+    border-radius: 50px;
     z-index: 2;
 
 }
@@ -329,8 +330,10 @@ WHY IS FLEXBOX SO WEIRD
     left: 0;
     bottom: 0;
     letter-spacing: 0.05em;
-        margin-top: 5em;
-
+    margin-top: 5em;
+}
+#sourcesFooter a {
+    padding: 0.1em;
 }
 
 /*#region univStyling*/
