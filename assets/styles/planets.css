@@ -59,7 +59,7 @@ This also lets the model expand without covering buttons!
 }
 #prev {
     color: white;
-    background-color: #32004F;
+    background-color: #9c30db;
     box-shadow: 0 4px 15px rgba(123, 0, 255, 0.507);
     padding: 17px;
     border-radius: 10px;
@@ -70,13 +70,13 @@ This also lets the model expand without covering buttons!
 #prev:hover {
     padding: 20px;
     border: none;
-    background-color: #6B2D8F; 
+    background-color: #c45eff; 
     box-shadow: 0 0 20px rgba(184, 127, 231, 0.6);
     opacity: 1;
 }
 #next {
     color: white;
-    background-color: #32004F;
+    background-color: #9c30db;
     box-shadow: 0 4px 15px rgba(10, 0, 21, 0.5);
     padding: 17px;
     border-radius: 10px;
@@ -87,7 +87,7 @@ This also lets the model expand without covering buttons!
 #next:hover {
     padding: 20px;
     border: none;
-    background-color: #6B2D8F; 
+    background-color: #c45eff; 
     box-shadow: 0 0 20px rgba(184, 127, 231, 0.6);
     opacity: 1;
 }
@@ -117,7 +117,7 @@ body,html {
 
 #jsCursor {
     position: fixed;
-    box-shadow: 0px 0px 130px 100px rgba(184, 127, 231, 0.4); 
+    box-shadow: 0px 0px 130px 100px rgba(184, 127, 231, 0.726); 
     border-radius: 70%;
     z-index: 1;
 }
@@ -125,6 +125,8 @@ body,html {
 body {
   --cursor-left: 1000px;
   --cursor-top: 1000px;
+    background: linear-gradient(135deg, #32004F 0%, #6B2D8F 50%, #bdabf5 100%);
+
 }
 
 body::before {
@@ -208,3 +210,5 @@ a:active {
 }
 
 /*#endregion univStyling*/
+
+
