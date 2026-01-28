@@ -17,7 +17,7 @@ const nasaImgElement = document.getElementById("nasaDailyImg");
 
 function imgOfDay(){
     try {
-        const apiKey = "";
+        const apiKey = "Ht5D8fd7AQU3Gg4X13cfx5U34bIBFU1eggMth9zn";
         let today = new Date();
         console.log(today.toISOString().slice(0,10));
         //the isosstringmethod https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
